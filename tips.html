@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Oasis - Care Tips</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌿 Urban Oasis</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Plant Gallery</a></li>
+                    <li><a href="tips.html" class="active">Care Tips</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2 class="section-title">Essential Care Tips for Beginners</h2>
+            <p class="section-subtitle">Master these three core principles and say goodbye to the 'plant killer' title</p>
+            
+            <div class="tip-item active">
+                <div class="tip-header" onclick="toggleTip(this)">
+                    💧 1. The Golden Rule of Watering: 'Water when dry'
+                    <span>+</span>
+                </div>
+                <div class="tip-content">
+                    <p>Most indoor plants don't die from drought, but from root rot caused by overwatering. Don't water on a fixed schedule like 'every few days'. The correct method is: insert your finger about two knuckles deep into the soil, and only water thoroughly when it feels dry, until water flows out of the bottom. Always empty the water collected in the saucer!</p>
+                </div>
+            </div>
+
+            <div class="tip-item">
+                <div class="tip-header" onclick="toggleTip(this)">
+                    ☀️ 2. The Science of Light: Direct vs. Indirect
+                    <span>+</span>
+                </div>
+                <div class="tip-content">
+                    <p><strong>Direct Light:</strong> Sunlight hits the leaves directly (like a south-facing windowsill), suitable for succulents and cacti.<br>
+                    <strong>Bright Indirect Light:</strong> 1-2 meters away from the window, or light filtered through a sheer curtain. This is the favorite environment for 80% of indoor foliage plants (like Monstera and Pothos).<br>
+                    <strong>Low Light Tolerant:</strong> Doesn't mean no light is needed, just that they can survive further from the window, like Snake Plants and Aglaonema.</p>
+                </div>
+            </div>
+
+            <div class="tip-item">
+                <div class="tip-header" onclick="toggleTip(this)">
+                    🪴 3. Soil and Ventilation: The Overlooked Keys
+                    <span>+</span>
+                </div>
+                <div class="tip-content">
+                    <p>Never dig up garden soil from outside to pot indoor plants! Garden soil compacts easily and may contain pest eggs. Please buy pre-mixed indoor potting soil (usually containing peat moss, perlite, and coco coir) to ensure it is loose and breathable. Additionally, good ventilation greatly reduces the chances of plant diseases and pests.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Urban Oasis. Nurturing every green leaf with care.</p>
+    </footer>
+
+    <script>
+        function toggleTip(header) {
+            const item = header.parentElement;
+            const icon = header.querySelector('span');
+            
+            document.querySelectorAll('.tip-item').forEach(el => {
+                if (el !== item) {
+                    el.classList.remove('active');
+                    el.querySelector('span').textContent = '+';
+                }
+            });
+
+            item.classList.toggle('active');
+            icon.textContent = item.classList.contains('active') ? '-' : '+';
+        }
+    </script>
+</body>
+</html>
